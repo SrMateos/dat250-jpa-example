@@ -8,17 +8,22 @@ public class Bank {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    private String name;
+    private Set<CreditCard> ownedCards;
+    
     public Long getId() {
         return id;
     }
 
     public String getName() {
-        // TODO: implement method!
-        return null;
-    }
+		return name;
+	}
 
-    public Set<CreditCard> getOwnedCards() {
-        return null;
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Set<CreditCard> getOwnedCards() {
+        return ownedCards;
     }
 }

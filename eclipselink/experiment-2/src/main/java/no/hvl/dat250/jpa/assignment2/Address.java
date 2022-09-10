@@ -7,19 +7,27 @@ public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    private String street;
+    private int number;
+    private String owners;
+    
     public String getStreet() {
-        // TODO: implement method!
-        return null;
-    }
+		return street;
+	}
 
-    public String getNumber() {
-        // TODO: implement method!
-        return null;
-    }
+	public void setStreet(String street) {
+		this.street = street;
+	}
 
-    public String getOwners() {
-        // TODO: implement method!
-        return null;
+	public int getNumber() {
+		return number;
+	}
+
+	public void setNumber(int number) {
+		this.number = number;
+	}
+
+	public String getOwners() {
+        return owners;
     }
 }

@@ -8,19 +8,25 @@ public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    private String name;
+  
+    @ManyToMany(fetch = FetchType.LAZY)
+    private Collection<Address> addreesses;
+    private Collection<CreditCard> creditCards;
+    
     public String getName() {
-        // TODO: implement method!
-        return null;
-    }
+		return name;
+	}
 
-    public Collection<Address> getAddresses() {
-        // TODO: implement method!
-        return null;
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Collection<Address> getAddresses() {
+        return addreesses;
     }
 
     public Collection<CreditCard> getCreditCards() {
-        // TODO: implement method!
-        return null;
+        return creditCards;
     }
 }
