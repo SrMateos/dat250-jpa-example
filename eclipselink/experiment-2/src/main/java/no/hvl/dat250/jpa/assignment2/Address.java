@@ -1,6 +1,8 @@
 package no.hvl.dat250.jpa.assignment2;
 
 import javax.persistence.*;
+import java.util.Collection;
+import java.util.Set;
 
 @Entity
 public class Address {
@@ -8,10 +10,20 @@ public class Address {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String street;
-    private int number;
-    private String owners;
-    
-    public String getStreet() {
+    private Integer number;
+
+	@ManyToMany(mappedBy = "addresses")
+    private Set<Person> owners;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getStreet() {
 		return street;
 	}
 
@@ -19,15 +31,20 @@ public class Address {
 		this.street = street;
 	}
 
-	public int getNumber() {
+	public Integer getNumber() {
 		return number;
 	}
 
-	public void setNumber(int number) {
+	public void setNumber(Integer number) {
 		this.number = number;
 	}
 
-	public String getOwners() {
+	public Set<Person> getOwners() {
         return owners;
     }
+
+	public void setOwners(Set<Person> owners) {
+		this.owners = owners;
+	}
+
 }

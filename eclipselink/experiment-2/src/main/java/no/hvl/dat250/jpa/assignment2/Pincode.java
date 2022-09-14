@@ -8,9 +8,13 @@ public class Pincode {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String pincode;
-    private int count;
-    
-    public Long getId() {
+    private Integer count;
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Long getId() {
         return id;
     }
 
@@ -18,15 +22,15 @@ public class Pincode {
 		return pincode;
 	}
 
-	public void setPinCode(String pinCode) {
-		this.pincode = pinCode;
+	public void setPincode(String pincode) {
+		this.pincode = pincode;
 	}
 
-	public int getCount() {
+	public Integer getCount() {
 		return count;
 	}
 
-	public void setCount(int count) {
+	public void setCount(Integer count) {
 		this.count = count;
 	}
 
